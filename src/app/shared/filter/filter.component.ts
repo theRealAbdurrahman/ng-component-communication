@@ -23,6 +23,10 @@ export class FilterComponent implements OnInit, AfterViewInit {
     }
 
   }
+  filterHandler($event) {
+    this.listFilter = $event;
+    console.log($event);
+  }
   // communicating the value of the filter using getters and seters
   // private _listFilter; // first we declare a private var
 
