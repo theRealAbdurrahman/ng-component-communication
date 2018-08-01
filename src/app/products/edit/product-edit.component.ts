@@ -21,8 +21,8 @@ export class ProductEditComponent implements OnInit {
     }
 
     constructor(private productService: ProductService,
-                private router: Router,
-                private route: ActivatedRoute) {
+        private router: Router,
+        private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
@@ -88,7 +88,7 @@ export class ProductEditComponent implements OnInit {
                     );
                     this.onSaveComplete();
                 },
-                (error: any) => this.errorMessage = <any>error
+                    (error: any) => this.errorMessage = <any>error
                 );
         } else {
             this.errorMessage = 'Please correct the validation errors.';

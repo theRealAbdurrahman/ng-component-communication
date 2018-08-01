@@ -1,12 +1,17 @@
-<div class='row'>
+<div class='row'
+     #div>
   <div class='col-md-2'>Filter by:</div>
   <div class='col-md-4'>
-    <input #filteredList type='text' [ngModel]='listFilter' (ngModelChange)="filterHandler($event)" />
+    <input #filteredList
+           type='text'
+           [(ngModel)]='listFilter'
+           (keyup)="filterHandler($event)" />
     <!-- <input type='text' [ngModel]='listFilter' (ngModelChange)='performFilter($event)' /> -->
   </div>
 </div>
-<div class='row' [hidden]='!listFilter'>
+<div class='row'
+     *ngIf="displayDetail">
   <div class='col-md-10'>
-    <h3>Filtered by: {{listFilter}} hit count :{{hitCount}} </h3>
+    <h3>Filtered by: {{listFilter|json}} hit count :{{hitCount}} </h3>
   </div>
 </div>

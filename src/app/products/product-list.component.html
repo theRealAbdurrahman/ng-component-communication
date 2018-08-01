@@ -5,9 +5,12 @@
 
 	<div class='panel-body'>
 		<!-- Filter by the Title   -->
-		<pm-filter [listFilter]="filteredProducts"
-		           [hitCount]='products?.length'>
+		<pm-filter #filterCriteria
+		           [hitCount]='filteredProducts?.length'
+		           [displayDetail]="displayDetails"
+		           (valueChanged)="performFilter($event)">
 		</pm-filter>
+		{{filterCriteria.listFilter}}
 
 		<div class='table-responsive'>
 			<table class='table'
